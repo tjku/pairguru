@@ -9,6 +9,7 @@ gem "decent_exposure"
 gem "devise"
 gem "draper", "3.0.0.pre1" # rails 5 compability
 gem "haml-rails"
+gem "httparty"
 gem "jquery-rails"
 gem "sass-rails"
 gem "sqlite3"
