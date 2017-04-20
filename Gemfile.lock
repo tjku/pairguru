@@ -76,6 +76,8 @@ GEM
     choice (0.2.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
     decent_decoration (0.1.0)
       decent_exposure (~> 3.0)
@@ -114,6 +116,7 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    hashdiff (0.3.2)
     html2haml (2.1.0)
       erubis (~> 2.7.0)
       haml (~> 4.0)
@@ -219,6 +222,7 @@ GEM
     ruby-progressbar (1.8.1)
     ruby_parser (3.8.4)
       sexp_processor (~> 4.1)
+    safe_yaml (1.0.4)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -258,6 +262,10 @@ GEM
     uniform_notifier (1.10.0)
     warden (1.2.7)
       rack (>= 1.0)
+    webmock (3.0.1)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -296,6 +304,7 @@ DEPENDENCIES
   spring-commands-rspec
   sqlite3
   uglifier
+  webmock
 
 BUNDLED WITH
    1.14.6

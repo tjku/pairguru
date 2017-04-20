@@ -7,6 +7,7 @@ require "pry"
 require "capybara/rails"
 require "simplecov"
 require "shoulda/matchers"
+require "webmock/rspec"
 SimpleCov.start "rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -38,6 +39,16 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  config.before(:each) do
+    stub_request(:get, /pairguru-api.herokuapp.com\/api\/v1\/movies\/.*/).
+    with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+    to_return(
+      status: 200,
+      body: '{"data": {"attributes": {"title":"a","plot":"b","rating":8.5,"poster":"/c.jpg"}}}',
+      headers: {"Content-Type"=> "application/json"}
+    )
+  end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

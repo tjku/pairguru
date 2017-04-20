@@ -10,7 +10,7 @@ class MovieDetails
   end
 
   def call
-    response = self.class.get("/api/v1/movies/#{URI.encode @title}")
+    response = self.class.get("/api/v1/movies/#{URI.encode @title}/")
 
     if response.success?
       response["data"]["attributes"]
