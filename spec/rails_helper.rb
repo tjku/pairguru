@@ -42,12 +42,12 @@ RSpec.configure do |config|
 
   config.before(:each) do
     stub_request(:get, /pairguru-api.herokuapp.com\/api\/v1\/movies\/.*/).
-    with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-    to_return(
-      status: 200,
-      body: '{"data": {"attributes": {"title":"a","plot":"b","rating":8.5,"poster":"/c.jpg"}}}',
-      headers: {"Content-Type"=> "application/json"}
-    )
+      with(headers: { "Accept" => "*/*", "User-Agent" => "Ruby" }).
+      to_return(
+        status: 200,
+        body: '{"data": {"attributes": {"title":"a","plot":"b","rating":8.5,"poster":"/c.jpg"}}}',
+        headers: { "Content-Type" => "application/json" },
+      )
   end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
