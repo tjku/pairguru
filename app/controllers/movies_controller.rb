@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   expose_decorated(:movie)
 
   def send_info
-    MovieInfoMailer.send_info(current_user, movie).deliver_now
+    MovieInfoMailer.send_info(current_user, movie).deliver_later
     redirect_to :back, notice: "Email sent with movie info"
   end
 
