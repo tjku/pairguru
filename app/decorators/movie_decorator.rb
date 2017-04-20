@@ -1,5 +1,6 @@
 class MovieDecorator < Draper::Decorator
   delegate_all
+  decorates_association :genre
 
   def initialize(object, options = {})
     @details = nil
